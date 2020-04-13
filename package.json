@@ -1,0 +1,19 @@
+{
+  "name": "idle-alarm",
+  "version": "1.0.0",
+  "description": "Play a sound when the computer is idle for a specific time",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "keywords": [
+    "idle",
+    "alarm"
+  ],
+  "author": "linhx",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^8.2.1"
+  }
+}
