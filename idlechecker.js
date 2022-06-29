@@ -7,9 +7,16 @@ const checkingTime = 2000; // ms, TODO env
 let intervalId;
 let isAlarming = false;
 
+/**
+ * start interval checking if computer was idle
+ * @param {*} win 
+ * @param {*} idleTime seconds
+ */
 function start (
     win,
     idleTime) {
+  const idleTimeInMilliseconds = idleTime * 1000;
+  const _checkingTime = idleTimeInMilliseconds < checkingTime ? idleTimeInMilliseconds : checkingTime;
   intervalId = setInterval(() => {
     if (powerMonitor.getSystemIdleTime() > idleTime) {
       if (!isAlarming) {
@@ -22,7 +29,7 @@ function start (
       }
       isAlarming = false;
     }
-  }, checkingTime);
+  }, _checkingTime);
 }
 
 function stop () {
