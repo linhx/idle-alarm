@@ -9,7 +9,8 @@ function createWindow () {
     width: 800,
     height: 400,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      contextIsolation: false,
     }
   })
   win.setMenuBarVisibility(false);
